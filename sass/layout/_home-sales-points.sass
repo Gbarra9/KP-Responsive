@@ -1,0 +1,17 @@
+.sales-points
+  padding: 10vh 0 0
+
+  .sales-point
+    margin-bottom: 2.5em
+
+    // only first sibling of type
+    &:first-of-type
+      margin-top: 1.5em
+    // all sales-point gets class but last child element
+    &:last-child
+      margin-bottom: 0
+
+    @media(min-width: 725px)
+      // aligns first item with sales-point class
+      &:first-of-type
+        margin-top: 0

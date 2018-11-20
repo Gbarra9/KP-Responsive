@@ -10,6 +10,14 @@
 
   // creates transition effect
   transition: all ease-in-out 250ms
+  @media(min-width: 725px)
+    position: relative
+    flex: auto
+    background: none
+    margin-top: 1em
+    margin-left: 2em
+    left: 0
+
 
   ul
     display: flex
@@ -19,11 +27,21 @@
     // takes up entire screen when navigation opened
     height: 100vh
 
+    @media(min-width: 725px)
+      flex-direction: row
+      height: auto
+
+
+
   li
     // shorthand for flex-grow, flex-shrink, felx-basis
     flex: 1 1 auto
     border-bottom: 1px solid rgba(0, 0, 0, .15)
     display: flex
+    @media(min-width: 725px)
+      display: inline-block
+      border: none
+      text-align: right
 
 
 
@@ -37,10 +55,16 @@
     align-items: center
     //  justify-content defines the alignment along the main axis (x-axis)
     justify-content: center
+    @media(min-width: 725px)
+      // defines space between and around content items along main-axis
+      display: inline
 
     // hover background on nav
     &:hover
       background: rgba(0, 0, 0, .10)
+      @media(min-width: 725px)
+        background: none
+        color: darken($accent, 25%)
 
   // moves class with .main-nav .is-open from right to left
   &.is-open
@@ -56,6 +80,8 @@
   right: 1em
   top: 1em
   cursor: pointer
+  @media(min-width: 725px)
+    display: none
 
 .hamburger, .hamburger::before, .hamburger::after
   content: ''

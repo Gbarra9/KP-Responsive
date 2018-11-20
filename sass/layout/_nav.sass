@@ -1,0 +1,86 @@
+.main-nav
+  background: $accent
+  position: absolute
+  top: 0
+  right: 0
+  left: 100%
+  font-size: 1.2rem
+  // hides text
+  overflow: hidden
+
+  // creates transition effect
+  transition: all ease-in-out 250ms
+
+  ul
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    text-align: center
+    // takes up entire screen when navigation opened
+    height: 100vh
+
+  li
+    // shorthand for flex-grow, flex-shrink, felx-basis
+    flex: 1 1 auto
+    border-bottom: 1px solid rgba(0, 0, 0, .15)
+    display: flex
+
+
+
+  a
+    color: $text-inverse
+    text-decoration: none
+    // definess default size of an element
+    flex-basis: 100%
+    display: flex
+    // align-items defines behavior of flex items along cross axis (y-axis)
+    align-items: center
+    //  justify-content defines the alignment along the main axis (x-axis)
+    justify-content: center
+
+    // hover background on nav
+    &:hover
+      background: rgba(0, 0, 0, .10)
+
+  // moves class with .main-nav .is-open from right to left
+  &.is-open
+    left: 0
+
+
+// Hamburger Menu
+
+.nav-toggle
+  display: block
+  padding: 1em
+  position: absolute
+  right: 1em
+  top: 1em
+  cursor: pointer
+
+.hamburger, .hamburger::before, .hamburger::after
+  content: ''
+  display: block
+  width: 2em
+  height: 3px
+  background: $white
+  transition: all ease-in-out 250ms
+
+// creates top horizontal white line
+.hamburger::before
+  transform: translateY(-6px)
+
+// creates bottom horizontal white line
+.hamburger::after
+  transform: translateY(3px)
+
+// rotates white lines on hamburger
+.hamburger.is-open
+  transform: rotate(45deg)
+
+  // rotates bottom line
+  &::after
+    transform: rotate(-90deg) translateX(3px)
+
+  // transparency on top line
+  &::before
+    opacity: 0
